@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display name</title>
+  </head>
+  <body>
+    <p id="name">Pratik</p>
+    <p id="vowels"></p>
+    <button onclick="calculateVowels()">Calculate Vowel</button>
+    <button onclick="redirectToGithub()">Github Repo</button>
+  </body>
+  <script>
+    function redirectToGithub() {
+      window.location.href = "https://github.com/pratikpopat92/minihackathon";
+    }
+    function calculateVowels() {
+      let name = document.querySelector("#name");
+      name = name.innerHTML.toString();
+      let newname = "";
+      for (let s of name) {
+        switch (s) {
+          case "A":
+          case "a":
+          case "e":
+          case "E":
+          case "i":
+          case "I":
+          case "O":
+          case "o":
+          case "U":
+          case "u":
+            newname += s;
+            break;
+        }
+      }
+      document.querySelector(
+        "#vowels"
+      ).innerHTML = `Vowels in your name are ${newname}`;
+    }
+  </script>
+</html>
